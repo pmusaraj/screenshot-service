@@ -2,7 +2,14 @@ const { chromium: playwright } = require("playwright-core");
 const chromium = require("@sparticuz/chromium");
 
 module.exports = async (req, res) => {
-  const { query } = req;
+  const { query, headers } = req;
+  const authToken = headers.authorization.replace("Bearer ", "");
+  console.log(authToken);
+  console.log(process.env.AUTH_TOKEN);
+  if (process.env.AUTH_TOKEN && authToken !== process.env.AUTH_TOKEN) {
+    res.status(403).send("unauthorized");
+  }
+
   const browser = await playwright.launch({
     args: chromium.args,
     executablePath: await chromium.executablePath(),
@@ -19,16 +26,10 @@ module.exports = async (req, res) => {
       res.status(200).send(screenshot);
     } else throw "Please provide a valid url";
   } catch (error) {
-    console.log(error);
     res.status(500).send({
       status: "Failed",
       error,
     });
-  } finally {
-    // if (browser !== null) {
-    //   await context.close();
-    //   await browser.close();
-    // }
   }
 };
 
