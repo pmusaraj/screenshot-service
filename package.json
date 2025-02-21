@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Serverless screenshot capture service.",
   "main": "api/capture.js",
+  "scripts": {
+    "vercel-build": "npm install && npx playwright install"
+  },
   "dependencies": {
     "playwright-aws-lambda": "^0.11.0",
     "playwright-core": "^1.50.1"
