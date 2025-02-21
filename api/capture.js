@@ -14,6 +14,7 @@ module.exports = async (req, res) => {
       res.status(200).send(screenshot);
     } else throw "Please provide a valid url";
   } catch (error) {
+    console.log(error);
     res.status(500).send({
       status: "Failed",
       error,
