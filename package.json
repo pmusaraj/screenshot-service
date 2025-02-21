@@ -1,0 +1,10 @@
+{
+  "name": "screenshot-service",
+  "version": "1.0.0",
+  "description": "Serverless screenshot capture service.",
+  "main": "index.js",
+  "dependencies": {
+    "playwright-aws-lambda": "^0.11.0",
+    "playwright-core": "^1.50.1"
+  }
+}
