@@ -4,7 +4,7 @@
   "description": "Serverless screenshot capture service.",
   "main": "api/capture.js",
   "scripts": {
-    "vercel-build": "npm install && npx playwright install"
+    "vercel-build": "npm install && npx playwright install --with-deps chromium"
   },
   "dependencies": {
     "@sparticuz/chromium": "^123.0.1",
