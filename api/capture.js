@@ -3,9 +3,10 @@ const chromium = require("@sparticuz/chromium");
 
 module.exports = async (req, res) => {
   const { query, headers } = req;
-  const authToken = headers.authorization.replace("Bearer ", "");
-  console.log(authToken);
-  console.log(process.env.AUTH_TOKEN);
+  const authToken = headers.authorization
+    ? headers.authorization.replace("Bearer ", "")
+    : null;
+
   if (process.env.AUTH_TOKEN && authToken !== process.env.AUTH_TOKEN) {
     res.status(403).send("unauthorized");
   }
