@@ -25,10 +25,10 @@ module.exports = async (req, res) => {
       error,
     });
   } finally {
-    if (browser !== null) {
-      await context.close();
-      await browser.close();
-    }
+    // if (browser !== null) {
+    //   await context.close();
+    //   await browser.close();
+    // }
   }
 };
 
