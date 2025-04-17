@@ -1,13 +1,13 @@
 {
   "name": "screenshot-service",
   "version": "1.0.0",
-  "description": "Serverless screenshot capture service.",
-  "main": "api/capture.js",
+  "description": "Screenshot capture service for Discover.",
   "scripts": {
-    "start": "node ./api/capture.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "@sparticuz/chromium": "^123.0.1",
+    "express": "^5.1.0",
     "playwright": "^1.44.1",
     "playwright-core": "1.44.1"
   }
