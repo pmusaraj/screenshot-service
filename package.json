@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Serverless screenshot capture service.",
   "main": "api/capture.js",
+  "scripts": {
+    "start": "node ./api/capture.js"
+  },
   "dependencies": {
     "@sparticuz/chromium": "^123.0.1",
     "playwright": "^1.44.1",
